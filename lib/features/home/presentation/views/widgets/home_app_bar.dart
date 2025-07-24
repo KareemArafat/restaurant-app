@@ -20,7 +20,7 @@ class HomeAppBar extends StatelessWidget {
                 GoRouter.of(context).pushReplacement(AppRouter.authPage),
             icon: Icon(Icons.logout_outlined, color: Colors.white, size: 30),
           ),
-          SizedBox(width: 10),
+          SizedBox(width: 20),
           Text(
             'Restaurant App',
             style: AppStyles.style25.copyWith(color: Colors.white),

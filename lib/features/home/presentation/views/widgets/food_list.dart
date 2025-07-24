@@ -42,7 +42,7 @@ final List<FoodModel> foods = [
   FoodModel(
     image: 'assets/images/food5.webp',
     name: 'Luxury Surf & Turf Platter',
-    price: 70,
+    price: 20,
   ),
   FoodModel(
     image: 'assets/images/food6.jpg',
