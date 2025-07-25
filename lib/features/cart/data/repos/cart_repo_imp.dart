@@ -15,4 +15,11 @@ class CartRepoImp implements CartRepo {
     var box = await Hive.openBox<FoodModel>(kFoods);
     await box.delete(foodModel.name);
   }
+
+  @override
+  Future<List<FoodModel>> myCart() async {
+    var box = await Hive.openBox<FoodModel>(kFoods);
+    List<FoodModel> foodList = box.values.toList();
+    return foodList;
+  }
 }

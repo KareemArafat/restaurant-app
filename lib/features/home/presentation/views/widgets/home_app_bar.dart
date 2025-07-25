@@ -11,7 +11,7 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 20, left: 6, right: 6),
-      height: MediaQuery.of(context).size.height * 0.1,
+      height: MediaQuery.of(context).size.height * 0.085,
       color: AppColors.priColor,
       child: Row(
         children: [
