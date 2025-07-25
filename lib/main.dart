@@ -8,8 +8,12 @@ import 'package:restaurant_app/core/utils/cubit_observer.dart';
 import 'package:restaurant_app/features/cart/data/repos/cart_repo_imp.dart';
 import 'package:restaurant_app/features/cart/presentation/manager/my_cart_cubit/my_cart_cubit.dart';
 import 'package:restaurant_app/features/home/data/models/food_model.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Bloc.observer = CubitObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(FoodModelAdapter());
