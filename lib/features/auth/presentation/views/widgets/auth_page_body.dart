@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurant_app/core/utils/app_colors.dart';
-import 'package:restaurant_app/core/utils/app_router.dart';
 import 'package:restaurant_app/core/utils/app_styles.dart';
+import 'package:restaurant_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:restaurant_app/features/auth/presentation/views/widgets/custom_button.dart';
 import 'package:restaurant_app/features/auth/presentation/views/widgets/custom_field.dart';
 
@@ -62,8 +62,11 @@ class _AuthPageBodyState extends State<AuthPageBody> {
                     text: 'Login',
                     ratio: 4.1,
                     tap: () {
-                      GoRouter.of(context).pushReplacement(AppRouter.homePage);
-                      //   if (_formKey.currentState!.validate()) {}
+                      if (_formKey.currentState!.validate()) {
+                        BlocProvider.of<LoginCubit>(
+                          context,
+                        ).login(email.text, password.text);
+                      }
                     },
                   ),
                   const Spacer(flex: 3),
