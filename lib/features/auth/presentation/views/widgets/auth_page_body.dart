@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restaurant_app/core/utils/app_colors.dart';
 import 'package:restaurant_app/core/utils/app_styles.dart';
 import 'package:restaurant_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
-import 'package:restaurant_app/features/auth/presentation/views/widgets/custom_button.dart';
-import 'package:restaurant_app/features/auth/presentation/views/widgets/custom_field.dart';
+import 'package:restaurant_app/core/widgets/custom_button.dart';
+import 'package:restaurant_app/core/widgets/custom_field.dart';
 
 class AuthPageBody extends StatefulWidget {
   const AuthPageBody({super.key});

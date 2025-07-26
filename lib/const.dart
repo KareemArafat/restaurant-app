@@ -1,1 +1,1 @@
-const kFoods = 'kFoodModel';
+const foodBox = 'kFoodBox';

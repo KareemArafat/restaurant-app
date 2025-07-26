@@ -71,7 +71,7 @@ class FoodItem extends StatelessWidget {
 }
 
 bool check(FoodModel foodModel) {
-  final box = Hive.box<FoodModel>(kFoods);
+  final box = Hive.box<FoodModel>(foodBox);
   if (box.containsKey(foodModel.name)) {
     return true;
   } else {

@@ -15,13 +15,9 @@ class AppStyles {
     color: Colors.white,
   );
 
-  static const style18 = TextStyle(fontSize: 18, fontWeight: FontWeight.w600);
-
   static const style15 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w600,
     color: Colors.white70,
   );
-
-  static const style10 = TextStyle(fontSize: 10, fontWeight: FontWeight.w600);
 }

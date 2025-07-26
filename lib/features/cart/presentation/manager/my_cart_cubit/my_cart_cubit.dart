@@ -14,7 +14,7 @@ class MyCartCubit extends Cubit<MyCartState> {
 
   cartUpdate([FoodModel? foodModel]) async {
     if (foodModel != null) {
-      final box = Hive.box<FoodModel>(kFoods);
+      final box = Hive.box<FoodModel>(foodBox);
       if (box.containsKey(foodModel.name)) {
         await _cartRepo.delFromCart(foodModel: foodModel);
       } else {

@@ -6,19 +6,19 @@ import 'package:restaurant_app/features/cart/data/repos/cart_repo.dart';
 class CartRepoImp implements CartRepo {
   @override
   Future<void> addToCart({required FoodModel foodModel}) async {
-    var box = Hive.box<FoodModel>(kFoods);
+    var box = Hive.box<FoodModel>(foodBox);
     await box.put(foodModel.name, foodModel);
   }
 
   @override
   Future<void> delFromCart({required FoodModel foodModel}) async {
-    var box = await Hive.openBox<FoodModel>(kFoods);
+    var box = await Hive.openBox<FoodModel>(foodBox);
     await box.delete(foodModel.name);
   }
 
   @override
   Future<List<FoodModel>> myCart() async {
-    var box = await Hive.openBox<FoodModel>(kFoods);
+    var box = await Hive.openBox<FoodModel>(foodBox);
     List<FoodModel> foodList = box.values.toList();
     return foodList;
   }

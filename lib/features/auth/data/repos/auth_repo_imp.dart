@@ -12,12 +12,15 @@ class AuthRepoImp implements AuthRepo {
       );
       return right(null);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        return left('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        return left('Wrong password provided for that user.');
-      } else {
-        return left('Authentication error: Try Again');
+      switch (e.code) {
+        case 'user-not-found':
+          return left('No user found for that email.');
+        case 'wrong-password':
+          return left('Wrong password provided for that user.');
+        case 'invalid-email':
+          return left('Invalid email address.');
+        default:
+          return left('Authentication error: Try Again');
       }
     }
   }

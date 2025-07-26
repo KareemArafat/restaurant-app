@@ -5,7 +5,7 @@ void customSnackBar(BuildContext context, String errMess) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       backgroundColor: AppColors.secColor,
-      duration: Duration(seconds: 100),
+      duration: Duration(seconds: 3),
       content: Text(
         errMess,
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),

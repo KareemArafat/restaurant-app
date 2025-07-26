@@ -9,7 +9,7 @@ import 'package:restaurant_app/features/cart/data/repos/cart_repo_imp.dart';
 import 'package:restaurant_app/features/cart/presentation/manager/my_cart_cubit/my_cart_cubit.dart';
 import 'package:restaurant_app/features/home/data/models/food_model.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'core/services/firebase/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +17,7 @@ void main() async {
   Bloc.observer = CubitObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(FoodModelAdapter());
-  await Hive.openBox<FoodModel>(kFoods);
+  await Hive.openBox<FoodModel>(foodBox);
   runApp(const RestaurantApp());
 }
 

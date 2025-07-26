@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:restaurant_app/core/utils/app_colors.dart';
 import 'package:restaurant_app/core/utils/app_router.dart';
 import 'package:restaurant_app/features/auth/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:restaurant_app/features/auth/presentation/views/widgets/auth_page_body.dart';
-import 'package:restaurant_app/features/auth/presentation/views/widgets/custom_snack_bar.dart';
+import 'package:restaurant_app/core/widgets/custom_snack_bar.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -23,7 +24,9 @@ class AuthPage extends StatelessWidget {
         },
         builder: (context, state) {
           if (state is LoginLoading) {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+              child: CircularProgressIndicator(color: AppColors.secColor),
+            );
           } else {
             return AuthPageBody();
           }
